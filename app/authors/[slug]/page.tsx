@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export async function generateStaticParams() {
   const authors = await getAllAuthors()
-  return authors.map((author) => ({
+  return authors.map((author: Author) => ({
     slug: author.slug,
   }))
 }

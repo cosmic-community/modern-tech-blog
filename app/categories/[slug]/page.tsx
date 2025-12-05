@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export async function generateStaticParams() {
   const categories = await getAllCategories()
-  return categories.map((category) => ({
+  return categories.map((category: Category) => ({
     slug: category.slug,
   }))
 }

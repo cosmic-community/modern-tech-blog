@@ -9,7 +9,7 @@ import { format } from 'date-fns'
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
-  return posts.map((post) => ({
+  return posts.map((post: Post) => ({
     slug: post.slug,
   }))
 }
