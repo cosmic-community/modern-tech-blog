@@ -26,7 +26,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
           ),
           code: ({ node, inline, ...props }: any) =>
             inline ? (
-              <code className="bg-gray-100 text-pink-600 px-1.5 py-0.5 rounded text-sm font-mono" {...props} />
+              <code className="inline bg-gray-100 text-pink-600 px-1.5 py-0.5 rounded text-sm font-mono whitespace-nowrap" {...props} />
             ) : (
               <code className="block bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono" {...props} />
             ),
