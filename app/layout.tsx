@@ -4,6 +4,8 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CosmicBadge from '@/components/CosmicBadge'
+import { getAllCategories } from '@/lib/cosmic'
+import { Category } from '@/types'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,18 +22,19 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   const bucketSlug = process.env.COSMIC_BUCKET_SLUG as string
+  const categories = await getAllCategories() as Category[]
   
   return (
     <html lang="en">
       <body className={inter.className}>
         <div className="flex flex-col min-h-screen">
-          <Header />
+          <Header categories={categories} />
           <main className="flex-grow">
             {children}
           </main>
