@@ -26,12 +26,12 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
           ),
           code: ({ node, inline, ...props }: any) =>
             inline ? (
-              <code className="bg-gray-50 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono border border-gray-200" {...props} />
+              <code className="bg-gray-100 text-pink-600 px-1.5 py-0.5 rounded text-sm font-mono" {...props} />
             ) : (
-              <code className="block bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm" {...props} />
+              <code {...props} />
             ),
           pre: ({ node, ...props }) => (
-            <pre className="bg-gray-900 rounded-lg overflow-x-auto my-6 not-prose" {...props} />
+            <pre className="bg-gray-900 rounded-lg overflow-x-auto my-6 p-4" {...props} />
           ),
           a: ({ node, ...props }) => (
             <a className="text-blue-600 hover:text-blue-700 underline" {...props} />

@@ -33,12 +33,11 @@ module.exports = {
               color: theme('colors.gray.900'),
             },
             code: {
-              color: theme('colors.gray.800'),
-              backgroundColor: theme('colors.gray.50'),
+              color: theme('colors.pink.600'),
+              backgroundColor: theme('colors.gray.100'),
               padding: '0.125rem 0.375rem',
               borderRadius: '0.25rem',
-              fontWeight: '400',
-              border: `1px solid ${theme('colors.gray.200')}`,
+              fontWeight: '500',
               fontSize: '0.875em',
             },
             'code::before': {
@@ -50,13 +49,15 @@ module.exports = {
             pre: {
               backgroundColor: theme('colors.gray.900'),
               color: theme('colors.gray.100'),
+              padding: '1rem',
+              borderRadius: '0.5rem',
             },
             'pre code': {
               backgroundColor: 'transparent',
               color: 'inherit',
               padding: '0',
-              border: 'none',
               fontSize: '0.875rem',
+              fontWeight: '400',
             },
           },
         },
