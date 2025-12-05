@@ -23,6 +23,7 @@ module.exports = {
         DEFAULT: {
           css: {
             color: theme('colors.gray.700'),
+            maxWidth: 'none',
             a: {
               color: theme('colors.blue.600'),
               '&:hover': {

@@ -24,12 +24,20 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
           blockquote: ({ node, ...props }) => (
             <blockquote className="border-l-4 border-blue-500 pl-4 italic my-6 text-gray-600" {...props} />
           ),
-          code: ({ node, inline, ...props }: any) =>
-            inline ? (
-              <code className="bg-gray-100 text-pink-600 px-1.5 py-0.5 rounded text-sm font-mono" {...props} />
-            ) : (
-              <code {...props} />
-            ),
+          code: ({ node, inline, className, children, ...props }: any) => {
+            if (inline) {
+              return (
+                <code className="bg-gray-100 text-pink-600 px-1.5 py-0.5 rounded text-sm font-mono" {...props}>
+                  {children}
+                </code>
+              )
+            }
+            return (
+              <code className={className} {...props}>
+                {children}
+              </code>
+            )
+          },
           pre: ({ node, ...props }) => (
             <pre className="bg-gray-900 rounded-lg overflow-x-auto my-6 p-4" {...props} />
           ),
